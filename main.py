@@ -134,7 +134,7 @@ async def deposit_account(message: types.Message, state: FSMContext):
 
 @dp.message(DepositStates.waiting_for_amount)
 async def deposit_amount(message: types.Message, state: FSMContext):
-    if not message.text.isdigit() or int(message.text) <= 0 or int(message.text) < {MIN_AMOUNT} or int(message.text} > {MAX_AMOUNT}:
+    if not message.text.isdigit() or int(message.text) <= 0 or int(message.text) < {MIN_AMOUNT} or int(message.text) > {MAX_AMOUNT}:
         logger.warning(
             f"User {message.from_user.id} entered invalid deposit amount: {message.text}"
         )
